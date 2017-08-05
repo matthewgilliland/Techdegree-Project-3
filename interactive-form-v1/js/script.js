@@ -114,7 +114,7 @@ const createError = function(errorMessage, span, div, insertBeforeLoc) {
       return true;
     } else if (paymentType.value === 'bitcoin') {
       return true;
-    } else if (parseInt(creditCardNumber.value) == isNaN) {
+    } else if (isNaN(parseInt(creditCardNumber.value))) {
       createError('Please enter numbers 0-9', paymentErrorSpan, paymentErrorDiv, creditCard);
       return false;
     }  else if (creditCardNumber.value == '' || creditCardNumber.value == null) {
@@ -123,10 +123,10 @@ const createError = function(errorMessage, span, div, insertBeforeLoc) {
     } else if (creditCardNumber.value.length < 13 || creditCardNumber.value.length > 16) {
         createError('Please enter a number between 13 and 16 digits', paymentErrorSpan, paymentErrorDiv, creditCard);
         return false;
-    } else if (zipCode.value.length != 5 || zipCode.value == '' || zipCode.value == null || parseInt(zipCode.value) == isNaN) {
+    } else if (zipCode.value.length != 5 || zipCode.value == '' || zipCode.value == null || isNaN(parseInt(zipCode.value))) {
         createError('Please enter a valid zip code', paymentErrorSpan, paymentErrorDiv, creditCard);
         return false;
-    } else if (cvvCode.value.length != 3 || cvvCode.value == '' || cvvCode.value == null || parseInt(cvvCode.value) == isNaN) {
+    } else if (cvvCode.value.length != 3 || cvvCode.value == '' || cvvCode.value == null || isNaN(parseInt(cvvCode.value))) {
         createError('Please enter a valid CVV code', paymentErrorSpan, paymentErrorDiv, creditCard);
         return false;
     } else {
