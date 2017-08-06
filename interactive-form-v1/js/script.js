@@ -179,7 +179,7 @@ $(function() {
 });
 
 // On shirt choice, show color dropdown and populate with correct colors
-$(designChoice).click(function() {
+$(designChoice).change(function() {
   if ($(this).val() === "js puns") {
   $(colorMenu).show();
   $(colorChoices).html(
