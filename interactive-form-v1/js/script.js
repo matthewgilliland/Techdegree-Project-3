@@ -164,7 +164,7 @@ $(function() {
 });
 
 // Listener: If "Other" is selected in "Job Role," reveal text field
-$(jobTitle).click(function() {
+$(jobTitle).change(function() {
   if ($(this).val() === "other") {
   $(otherTitle).show();
 } else {
